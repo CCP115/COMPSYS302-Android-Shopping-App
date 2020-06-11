@@ -57,31 +57,57 @@ public class DataProvider {
             "1899.00", "2298.85"};
 
 
-    static int[] imageAddrs = {R.drawable.cpu001, R.drawable.cpu002, R.drawable.cpu003,
-            R.drawable.cpu004, R.drawable.cpu005, R.drawable.cpu006, R.drawable.cpu007,
-            R.drawable.cpu008, R.drawable.cpu009, R.drawable.cpu010,
-            R.drawable.gpu001, R.drawable.gpu002, R.drawable.gpu003, R.drawable.gpu004,
-            R.drawable.gpu005, R.drawable.gpu006, R.drawable.gpu007, R.drawable.gpu008,
-            R.drawable.gpu009, R.drawable.gpu010,
-            R.drawable.monitor001, R.drawable.monitor002, R.drawable.monitor003,
-            R.drawable.monitor004, R.drawable.monitor005, R.drawable.monitor006,
-            R.drawable.monitor007, R.drawable.monitor008, R.drawable.monitor009,
-            R.drawable.monitor010};
+    static int[][] imageAddrs = {
+            // CPU Images
+            {R.drawable.cpu001, R.drawable.cpu001x2, R.drawable.cpu001x3},
+            {R.drawable.cpu002, R.drawable.cpu002x2, R.drawable.cpu002x3},
+            {R.drawable.cpu003, R.drawable.cpu003x2, R.drawable.cpu003x3},
+            {R.drawable.cpu004, R.drawable.cpu004x2, R.drawable.cpu004x3},
+            {R.drawable.cpu005, R.drawable.cpu005x2, R.drawable.cpu005x3},
+            {R.drawable.cpu006, R.drawable.cpu006x2, R.drawable.cpu006x3},
+            {R.drawable.cpu007, R.drawable.cpu007x2, R.drawable.cpu007x3},
+            {R.drawable.cpu008, R.drawable.cpu008x2, R.drawable.cpu008x3},
+            {R.drawable.cpu009, R.drawable.cpu009x2, R.drawable.cpu009x3},
+            {R.drawable.cpu010, R.drawable.cpu010x2, R.drawable.cpu010x3},
+            // GPU Images
+            {R.drawable.gpu001, R.drawable.gpu001x2, R.drawable.gpu001x3},
+            {R.drawable.gpu002, R.drawable.gpu002x2, R.drawable.gpu002x3},
+            {R.drawable.gpu003, R.drawable.gpu003x2, R.drawable.gpu003x3},
+            {R.drawable.gpu004, R.drawable.gpu004x2, R.drawable.gpu004x3},
+            {R.drawable.gpu005, R.drawable.gpu005x2, R.drawable.gpu005x3},
+            {R.drawable.gpu006, R.drawable.gpu006x2, R.drawable.gpu006x3},
+            {R.drawable.gpu007, R.drawable.gpu007x2, R.drawable.gpu007x3},
+            {R.drawable.gpu008, R.drawable.gpu008x2, R.drawable.gpu008x3},
+            {R.drawable.gpu009, R.drawable.gpu009x2, R.drawable.gpu009x3},
+            {R.drawable.gpu010, R.drawable.gpu010x2, R.drawable.gpu010x3},
+            // Monitor Images
+            {R.drawable.monitor001, R.drawable.monitor001x2, R.drawable.monitor001x3},
+            {R.drawable.monitor002, R.drawable.monitor002x2, R.drawable.monitor002x3},
+            {R.drawable.monitor003, R.drawable.monitor003x2, R.drawable.monitor003x3},
+            {R.drawable.monitor004, R.drawable.monitor004x2, R.drawable.monitor004x3},
+            {R.drawable.monitor005, R.drawable.monitor005x2, R.drawable.monitor005x3},
+            {R.drawable.monitor006, R.drawable.monitor006x2, R.drawable.monitor006x3},
+            {R.drawable.monitor007, R.drawable.monitor007x2, R.drawable.monitor007x3},
+            {R.drawable.monitor008, R.drawable.monitor008x2, R.drawable.monitor008x3},
+            {R.drawable.monitor009, R.drawable.monitor009x2, R.drawable.monitor009x3},
+            {R.drawable.monitor010, R.drawable.monitor010x2, R.drawable.monitor010x3},
+    };
 
 
     public static ArrayList<Item> generateData() {
         ArrayList<Item> items = new ArrayList<Item>();
 
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 30; i++) {
 
             String id = ids[i];
             String price = prices[i];
             String name = names[i];
 
-            int imageAddr = imageAddrs[i];
-            Item i = new Item(id, price, name, imageAddr);
-            items.add(i);
+            int[] imageAddr = imageAddrs[i];
+
+            Item tempItem = new Item(id, price, name, imageAddr);
+            items.add(tempitem);
         }
         return items;
     }
