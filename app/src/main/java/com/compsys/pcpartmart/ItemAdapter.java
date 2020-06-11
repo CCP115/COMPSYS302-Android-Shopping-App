@@ -35,8 +35,8 @@ public class ItemAdapter extends ArrayAdapter<Item> {
             LayoutInflater inflater = (LayoutInflater)getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.list_item, parent, false);
             viewHolder.ivImage = (ImageView)convertView.findViewById(R.id.ivItemImage);
-            viewHolder.tvPrice = (TextView)convertView.findViewById(R.id.tvItemName);
-            viewHolder.tvName = (TextView)convertView.findViewById(R.id.tvItemPrice);
+            viewHolder.tvPrice = (TextView)convertView.findViewById(R.id.tvItemPrice);
+            viewHolder.tvName = (TextView)convertView.findViewById(R.id.tvItemName);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder)convertView.getTag();

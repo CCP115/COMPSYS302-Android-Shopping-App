@@ -1,13 +1,15 @@
 package com.compsys.pcpartmart;
 
-public class Item {
+import java.io.Serializable;
+
+public class Item implements Serializable {
 
     private String id;
     private String name;
     private String price;
     private int[] images;
 
-    public Item(String id, String name, String price, int[] images) {
+    public Item(String id, String price, String name, int[] images) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -24,5 +26,9 @@ public class Item {
 
     public int get_image(int i) {
         return images[i];
+    }
+
+    public int[] getImages() {
+        return images;
     }
 }
