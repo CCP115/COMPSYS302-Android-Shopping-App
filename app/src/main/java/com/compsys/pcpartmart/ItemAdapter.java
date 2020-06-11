@@ -32,14 +32,14 @@ public class ItemAdapter extends ArrayAdapter<Item> {
 
         if (convertView == null) {
             viewHolder = new ViewHolder();
-            LayoutInflater inflater =
-                    (LayoutInflater)getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater inflater = (LayoutInflater)getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.list_item, parent, false);
-            viewHolder.ivImage = (ImageView) convertView.findViewById(R.id.ivItemImage);
-            viewHolder.tvName = (TextView)convertView.findViewById(R.id.tvItemName);
-            viewHolder.tvPrice = (TextView)convertView.findViewById(R.id.tvItemPrice);
+            viewHolder.ivImage = (ImageView)convertView.findViewById(R.id.ivItemImage);
+            viewHolder.tvPrice = (TextView)convertView.findViewById(R.id.tvItemName);
+            viewHolder.tvName = (TextView)convertView.findViewById(R.id.tvItemPrice);
+            convertView.setTag(viewHolder);
         } else {
-            viewHolder = (ViewHolder) convertView.getTag();
+            viewHolder = (ViewHolder)convertView.getTag();
         }
 
         // Populate the data into the template view using the data object

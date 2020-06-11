@@ -14,12 +14,34 @@
         android:layout_centerHorizontal="true"/>
 
     <Button
-        android:id="@+id/gay_button"
+        android:id="@+id/gpu_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Press if gay"
+        android:text="GPU Section"
+        android:layout_above="@id/cpu_button"
+        android:layout_centerHorizontal="true"
+        android:layout_alignLeft="@id/mntr_button"
+        android:layout_alignRight="@id/mntr_button"
+        />
+
+    <Button
+        android:id="@+id/cpu_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CPU Section"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:layout_alignLeft="@id/mntr_button"
+        android:layout_alignRight="@id/mntr_button"
+        />
+
+    <Button
+        android:id="@+id/mntr_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Monitor Section"
+        android:layout_below="@id/cpu_button"
+        android:layout_centerHorizontal="true"
         />
 
 </RelativeLayout>

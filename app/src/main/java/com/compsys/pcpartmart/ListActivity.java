@@ -1,7 +1,9 @@
 package com.compsys.pcpartmart;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.widget.ListView;
@@ -22,10 +24,21 @@ public class ListActivity extends AppCompatActivity {
         lvItems = (ListView) findViewById(R.id.lvItems);
         ArrayList<Item> aItems = new ArrayList<Item>();
 
-        aItems = DataProvider.generateData();
+        Intent intent = getIntent();
+
+        String listToOpen = intent.getStringExtra("MessageFromMainActivity");
+
+        if (listToOpen.equals("CPU")) {
+            aItems = DataProvider.generateCpuData();
+        } else if (listToOpen.equals("GPU")) {
+            aItems = DataProvider.generateGpuData();
+        } else {
+            aItems = DataProvider.generateMntrData();
+        }
         itemAdapter = new ItemAdapter(this, aItems);
 
         lvItems.setAdapter(itemAdapter);
 
+        LinearLayoutManager lm = new LinearLayoutManager(this);
     }
 }

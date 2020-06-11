@@ -9,11 +9,26 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    View.OnClickListener gayButtonHandler = new View.OnClickListener() {
+    View.OnClickListener gpuButtonHandler = new View.OnClickListener() {
         public void onClick(View view) {
             Intent listActivity = new Intent(getBaseContext(), ListActivity.class);
-            listActivity.putExtra("MessageFromMainActivity", "This message was sent" +
-                    "from the main activity!");
+            listActivity.putExtra("MessageFromMainActivity", "GPU");
+            startActivity(listActivity);
+        }
+    };
+
+    View.OnClickListener cpuButtonHandler = new View.OnClickListener() {
+        public void onClick(View view) {
+            Intent listActivity = new Intent(getBaseContext(), ListActivity.class);
+            listActivity.putExtra("MessageFromMainActivity", "CPU");
+            startActivity(listActivity);
+        }
+    };
+
+    View.OnClickListener mntrButtonHandler = new View.OnClickListener() {
+        public void onClick(View view) {
+            Intent listActivity = new Intent(getBaseContext(), ListActivity.class);
+            listActivity.putExtra("MessageFromMainActivity", "MONITOR");
             startActivity(listActivity);
         }
     };
@@ -23,7 +38,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button gayButton = (Button) findViewById(R.id.gay_button);
-        gayButton.setOnClickListener(gayButtonHandler);
+        // Set up handler for GPU button press
+        Button gpuButton = (Button) findViewById(R.id.gpu_button);
+        gpuButton.setOnClickListener(gpuButtonHandler);
+
+        // Set up handler for CPU button press
+        Button cpuButton = (Button) findViewById(R.id.cpu_button);
+        cpuButton.setOnClickListener(cpuButtonHandler);
+
+        // Set up handler for monitor button press
+        Button mntrButton = (Button) findViewById(R.id.mntr_button);
+        mntrButton.setOnClickListener(mntrButtonHandler);
     }
 }
