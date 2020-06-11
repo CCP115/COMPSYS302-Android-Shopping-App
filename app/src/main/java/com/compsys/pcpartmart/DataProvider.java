@@ -107,7 +107,7 @@ public class DataProvider {
             int[] imageAddr = imageAddrs[i];
 
             Item tempItem = new Item(id, price, name, imageAddr);
-            items.add(tempitem);
+            items.add(tempItem);
         }
         return items;
     }

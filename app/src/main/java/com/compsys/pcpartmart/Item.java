@@ -1,11 +1,14 @@
 package com.compsys.pcpartmart;
 
 public class Item {
+
+    private String id;
     private String name;
     private String price;
     private int[] images;
 
-    public Item(String name, String price, int[] images) {
+    public Item(String id, String name, String price, int[] images) {
+        this.id = id;
         this.name = name;
         this.price = price;
         this.images = images;
