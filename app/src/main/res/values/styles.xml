@@ -1,10 +1,38 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <style name="MainTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/mainPrimary</item>
+        <item name="colorPrimaryDark">@color/mainPrimaryDark</item>
+        <item name="colorAccent">@color/mainAccent</item>
+        <!-- This is the styling for action bar -->
+        <item name="actionBarStyle">@style/MyActionBar</item>
+    </style>
+
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <!--<item name="background">@android:color/holo_blue_light</item>-->
+        <item name="titleTextStyle">@style/MyActionBarTitle</item>
+    </style>
+
+    <style name="MyActionBarTitle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/titleLight</item>
+    </style>
+
+    <style name="cpuList">
+        <item name="colorPrimary">@color/cpuPrimary</item>
+        <item name="colorPrimaryDark">@color/cpuPrimaryDark</item>
+        <item name="colorAccent">@color/cpuLight</item>
+    </style>
+
+    <style name="mntrList">
+        <item name="colorPrimary">@color/mntrPrimary</item>
+        <item name="colorPrimaryDark">@color/mntrPrimaryDark</item>
+        <item name="colorAccent">@color/mntrLight</item>
+    </style>
+
+    <style name="gpuList">
+        <item name="colorPrimary">@color/gpuPrimary</item>
+        <item name="colorPrimaryDark">@color/gpuPrimaryDark</item>
+        <item name="colorAccent">@color/gpuLight</item>
     </style>
     
     <style name="TextViewItemPrice">

@@ -24,6 +24,7 @@
             android:layout_height="wrap_content"
             android:textSize="32sp"
             android:text="Item Name"
+            android:textColor="@color/mainText"
             android:layout_marginTop="8dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp" />
@@ -36,6 +37,7 @@
             android:textSize="22sp"
             android:text="Price"
             android:textStyle="bold"
+            android:textColor="@color/priceText"
             android:paddingLeft="10dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="8dp" />
@@ -52,6 +54,7 @@
 
             <TextView
                 android:id="@+id/tvItemDesc"
+                android:textColor="@color/descText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"

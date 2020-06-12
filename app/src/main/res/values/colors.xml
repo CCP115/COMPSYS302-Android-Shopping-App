@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="mainPrimary">#63625C</color>
+    <color name="mainPrimaryDark">#393833</color>
+    <color name="mainAccent">#908f89</color>
+
+    <color name="gpuPrimary">#5c6bc0</color>
+    <color name="gpuPrimaryDark">#26418f</color>
+    <color name="gpuLight">#8e99f3</color>
+
+    <color name="cpuPrimary">#2e7d32</color>
+    <color name="cpuPrimaryDark">#005005</color>
+    <color name="cpuLight">#60ad5e</color>
+
+    <color name="mntrPrimary">#d32f2f</color>
+    <color name="mntrPrimaryDark">#9a0007</color>
+    <color name="mntrLight">#ff6659</color>
+
+    <color name="searchPrimary">#6200EE</color>
+    <color name="searchPrimaryDark">#3700B3</color>
+    <color name="searchAccent">#03DAC5</color>
+
+    <color name="mainText">#333333</color>
+    <color name="priceText">#222222</color>
+    <color name="descText">#444444</color>
+
+    <color name="titleLight">#EEEEEE</color>
 </resources>

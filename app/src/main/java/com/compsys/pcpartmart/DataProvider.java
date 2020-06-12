@@ -116,7 +116,7 @@ public class DataProvider {
 
             int[] imageAddr = cpuImageAddrs[i];
 
-            Item tempItem = new Item(id, price, name, imageAddr);
+            Item tempItem = new Item(id, price, name, "CPU", imageAddr);
             cpus.add(tempItem);
         }
         return cpus;
@@ -132,7 +132,7 @@ public class DataProvider {
 
             int[] imageAddr = gpuImageAddrs[i];
 
-            Item tempItem = new Item(id, price, name, imageAddr);
+            Item tempItem = new Item(id, price, name, "GPU", imageAddr);
             gpus.add(tempItem);
         }
         return gpus;
@@ -148,7 +148,7 @@ public class DataProvider {
 
             int[] imageAddr = mntrImageAddrs[i];
 
-            Item tempItem = new Item(id, price, name, imageAddr);
+            Item tempItem = new Item(id, price, name, "MONITOR", imageAddr);
             monitors.add(tempItem);
         }
         return monitors;

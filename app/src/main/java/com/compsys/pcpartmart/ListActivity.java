@@ -29,15 +29,27 @@ public class ListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Create intent to receive the type of List to display
+        Intent intent = getIntent();
+        String listToOpen = intent.getStringExtra("MessageFromMainActivity");
+
+        // Set theme for which List
+        if (listToOpen.equals("CPU")) {
+            setTheme(R.style.cpuList);
+        } else if (listToOpen.equals("GPU")) {
+            setTheme(R.style.gpuList);
+        } else {
+            setTheme(R.style.mntrList);
+        }
+
         setContentView(R.layout.activity_list);
 
+        // Create ListView object to associate with XML view
         lvItems = (ListView) findViewById(R.id.lvItems);
         ArrayList<Item> aItems = new ArrayList<Item>();
 
-        Intent intent = getIntent();
-
-        String listToOpen = intent.getStringExtra("MessageFromMainActivity");
-
+        // Generate the appropriate data for type of ListView called
         if (listToOpen.equals("CPU")) {
             aItems = DataProvider.generateCpuData();
         } else if (listToOpen.equals("GPU")) {
@@ -45,12 +57,14 @@ public class ListActivity extends AppCompatActivity {
         } else {
             aItems = DataProvider.generateMntrData();
         }
-        itemAdapter = new ItemAdapter(this, aItems);
 
+        // Set up ItemAdapter with data
+        itemAdapter = new ItemAdapter(this, aItems);
         lvItems.setAdapter(itemAdapter);
 
         LinearLayoutManager lm = new LinearLayoutManager(this);
 
+        // Set up OnClickListener for when item is pressed
         setupItemSelectedListener();
     }
 

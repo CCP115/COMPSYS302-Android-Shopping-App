@@ -49,7 +49,6 @@ public class ItemAdapter extends ArrayAdapter<Item> {
         int resID = curryItem.get_image(0);
         viewHolder.ivImage.setImageResource(resID);
 
-
         return convertView;
     }
 

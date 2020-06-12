@@ -15,6 +15,19 @@ public class ItemDetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Load intent extras
+        Intent thisIntent = getIntent();
+        Item item = (Item) thisIntent.getSerializableExtra("item");
+
+        // Generate theme appropriately
+        if (item.getType().equals("CPU")) {
+            setTheme(R.style.cpuList);
+        } else if (item.getType().equals("GPU")) {
+            setTheme(R.style.gpuList);
+        } else {
+            setTheme(R.style.mntrList);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_detail);
 
@@ -24,8 +37,6 @@ public class ItemDetailActivity extends AppCompatActivity {
         //tvItemDesc = (TextView) findViewById(R.id.tvItemDesc);
 
         // Load the Item passed in by ListActivity
-        Intent thisIntent = getIntent();
-        Item item = (Item) thisIntent.getSerializableExtra("item");
         loadItem(item);
 
         // Create image slider (ViewPager)
