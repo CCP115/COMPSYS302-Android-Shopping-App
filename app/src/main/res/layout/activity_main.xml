@@ -7,42 +7,116 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/top_picks_view"
+        android:scrollbars="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@id/top_picks_text"
+        android:layout_marginTop="20dp"/>
+
     <TextView
+        android:id="@+id/top_picks_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TOP PICKS"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"/>
 
+    <!-- GPUs -->
     <Button
         android:id="@+id/gpu_button"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@android:color/transparent"
+        android:layout_below="@id/top_picks_view"
+        android:layout_marginTop="25dp"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:id="@+id/gpu_image"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:layout_alignBottom="@+id/gpu_button"
+        android:layout_margin="2dp"
+        android:src="@drawable/gpu_icon"/>
+
+    <TextView
+        style="@style/TextViewItemName"
+        android:id ="@+id/gpu_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="GPU Section"
-        android:layout_above="@id/cpu_button"
-        android:layout_centerHorizontal="true"
-        android:layout_alignLeft="@id/mntr_button"
-        android:layout_alignRight="@id/mntr_button"
-        />
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="170dp"
+        android:textSize="18sp"
+        android:layout_alignBottom="@+id/gpu_button"
+        android:text="GPUs"
+        android:textColor="@color/mainText"
+        android:maxLines="2"
+        android:ellipsize="end"/>
 
+    <!-- CPUs -->
     <Button
         android:id="@+id/cpu_button"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@android:color/transparent"
+        android:layout_below="@id/gpu_button"
+        android:layout_marginTop="25dp"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:id="@+id/cpu_image"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:layout_alignBottom="@+id/cpu_button"
+        android:layout_margin="2dp"
+        android:src="@drawable/cpu_icon"/>
+
+    <TextView
+        style="@style/TextViewItemName"
+        android:id ="@+id/cpu_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CPU Section"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@id/mntr_button"
-        android:layout_alignRight="@id/mntr_button"
-        />
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="170dp"
+        android:textSize="18sp"
+        android:layout_alignBottom="@+id/cpu_button"
+        android:text="CPUs"
+        android:textColor="@color/mainText"
+        android:maxLines="2"
+        android:ellipsize="end"/>
 
+    <!-- Monitors -->
     <Button
         android:id="@+id/mntr_button"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@android:color/transparent"
+        android:layout_below="@id/cpu_button"
+        android:layout_marginTop="25dp"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:id="@+id/mntr_image"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:layout_alignBottom="@+id/mntr_button"
+        android:layout_margin="2dp"
+        android:src="@drawable/monitor_icon"/>
+
+    <TextView
+        style="@style/TextViewItemName"
+        android:id ="@+id/mntr_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Monitor Section"
-        android:layout_below="@id/cpu_button"
-        android:layout_centerHorizontal="true"
-        />
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="170dp"
+        android:textSize="18sp"
+        android:layout_alignBottom="@+id/mntr_button"
+        android:text="Monitors"
+        android:textColor="@color/mainText"
+        android:maxLines="2"
+        android:ellipsize="end"/>
 
 </RelativeLayout>

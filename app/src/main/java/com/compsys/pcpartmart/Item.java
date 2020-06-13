@@ -1,14 +1,16 @@
 package com.compsys.pcpartmart;
 
 import java.io.Serializable;
+import java.util.Random;
 
 public class Item implements Serializable {
 
     private String id;
     private String name;
     private String price;
-    private int[] images;
     private String type;
+    private int views;
+    private int[] images;
 
     public Item(String id, String price, String name, String type, int[] images) {
         this.id = id;
@@ -16,22 +18,33 @@ public class Item implements Serializable {
         this.price = price;
         this.type = type;
         this.images = images;
+
+        Random rand = new Random();
+        this.views = rand.nextInt(50);
     }
 
-    public String get_name() {
+    public String getName() {
         return name;
     }
 
-    public String get_price() {
+    public String getPrice() {
         return price;
     }
 
-    public int get_image(int i) {
+    public int getImage(int i) {
         return images[i];
     }
 
     public String getType() {
-        return this.type;
+        return type;
+    }
+
+    public int getViews() {
+        return views;
+    }
+
+    public void incrementView() {
+        views++;
     }
 
     public int[] getImages() {

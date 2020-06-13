@@ -47,11 +47,11 @@ public class ItemDetailActivity extends AppCompatActivity {
 
     private void loadItem(Item item) {
         // Change activity title
-        this.setTitle(item.get_name());
+        this.setTitle(item.getName());
 
         // Set Item Name and Price and Desc
-        tvItemName.setText(item.get_name());
-        tvItemPrice.setText(item.get_price());
+        tvItemName.setText(item.getName());
+        tvItemPrice.setText(item.getPrice());
         //tvItemDesc.setText(item.get_desc());
     }
 }

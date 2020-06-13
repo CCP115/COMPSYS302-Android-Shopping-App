@@ -43,10 +43,10 @@ public class ItemAdapter extends ArrayAdapter<Item> {
         }
 
         // Populate the data into the template view using the data object
-        viewHolder.tvName.setText(curryItem.get_name());
-        viewHolder.tvPrice.setText(curryItem.get_price());
+        viewHolder.tvName.setText(curryItem.getName());
+        viewHolder.tvPrice.setText(curryItem.getPrice());
 
-        int resID = curryItem.get_image(0);
+        int resID = curryItem.getImage(0);
         viewHolder.ivImage.setImageResource(resID);
 
         return convertView;

@@ -9,7 +9,7 @@
         android:id="@+id/ivItemImage"
         android:layout_width="120dp"
         android:layout_height="100dp"
-        android:layout_margin="2dp" />
+        android:layout_margin="2dp"/>
 
     <TextView
         style="@style/TextViewItemName"
