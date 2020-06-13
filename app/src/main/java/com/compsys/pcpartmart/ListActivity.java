@@ -28,13 +28,13 @@ public class ListActivity extends AppCompatActivity {
     ItemAdapter itemAdapter;
     ArrayList<Item> aItems;
 
-    View.OnClickListener clickHandler = new View.OnClickListener() {
-        public void onClick(View view) {
-            Intent detailActivity = new Intent(getBaseContext(), ItemDetailActivity.class);
-            detailActivity.putExtra("MessageFromMainActivity", "GPU");
-            startActivity(detailActivity);
-        }
-    };
+//    View.OnClickListener clickHandler = new View.OnClickListener() {
+//        public void onClick(View view) {
+//            Intent detailActivity = new Intent(getBaseContext(), ItemDetailActivity.class);
+//            detailActivity.putExtra("MessageFromMainActivity", "GPU");
+//            startActivity(detailActivity);
+//        }
+//    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
