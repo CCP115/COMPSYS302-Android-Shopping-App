@@ -9,13 +9,15 @@ public class Item implements Serializable {
     private String price;
     private int[] images;
     private String type;
+    private String desc;
 
-    public Item(String id, String price, String name, String type, int[] images) {
+    public Item(String id, String price, String name, String type, String desc, int[] images) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.type = type;
         this.images = images;
+        this.desc = desc;
     }
 
     public String get_name() {
@@ -28,6 +30,10 @@ public class Item implements Serializable {
 
     public int get_image(int i) {
         return images[i];
+    }
+
+    public String getDesc() {
+        return this.desc;
     }
 
     public String getType() {

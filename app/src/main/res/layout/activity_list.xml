@@ -7,6 +7,24 @@
     android:orientation="vertical"
     tools:context=".ListActivity">
 
+    <TextView
+        android:id="@+id/tvSearchQuery"
+        style="@style/TextViewSearchQueryShow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Search Query Test"
+        android:padding="8dp"/>
+
+    <TextView
+        android:id="@+id/tvNoResults"
+        style="@style/TextViewNoResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="No matching results found."
+        android:padding="8dp"/>
+
     <ListView
         android:id="@+id/lvItems"
         android:layout_width="match_parent"
