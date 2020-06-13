@@ -8,10 +8,13 @@ import android.media.Image;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class ItemDetailActivity extends AppCompatActivity {
 
     private TextView tvItemName;
     private TextView tvItemPrice;
+    private TextView tvItemDesc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +37,7 @@ public class ItemDetailActivity extends AppCompatActivity {
         // Link to XML Text Views
         tvItemName = (TextView) findViewById(R.id.tvItemName);
         tvItemPrice = (TextView) findViewById(R.id.tvItemPrice);
-        //tvItemDesc = (TextView) findViewById(R.id.tvItemDesc);
+        tvItemDesc = (TextView) findViewById(R.id.tvItemDesc);
 
         // Load the Item passed in by ListActivity
         loadItem(item);
@@ -52,6 +55,6 @@ public class ItemDetailActivity extends AppCompatActivity {
         // Set Item Name and Price and Desc
         tvItemName.setText(item.getName());
         tvItemPrice.setText(item.getPrice());
-        //tvItemDesc.setText(item.get_desc());
+        tvItemDesc.setText(item.getDesc());
     }
 }

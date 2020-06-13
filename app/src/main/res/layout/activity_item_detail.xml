@@ -1,70 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ItemDetailActivity">
+    android:layout_height="match_parent" >
 
     <LinearLayout
-        android:gravity="left"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ItemDetailActivity">
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/viewPager"
+        <LinearLayout
+            android:gravity="left"
             android:layout_width="match_parent"
-            android:layout_height="280dp" />
-
-        <TextView
-            android:id="@+id/tvItemName"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="32sp"
-            android:text="Item Name"
-            android:textColor="@color/mainText"
-            android:layout_marginTop="8dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp" />
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tvItemPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:textSize="22sp"
-            android:text="Price"
-            android:textStyle="bold"
-            android:textColor="@color/priceText"
-            android:paddingLeft="10dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="8dp" />
-
-        <View
-            android:background="@android:color/darker_gray"
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:layout_marginTop="8dp" />
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="280dp" />
 
             <TextView
+                android:id="@+id/tvItemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="32sp"
+                android:text="Item Name"
+                android:textColor="@color/mainText"
+                android:layout_marginTop="8dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" />
+
+            <TextView
+                android:id="@+id/tvItemPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:textSize="22sp"
+                android:text="Price"
+                android:textStyle="bold"
+                android:textColor="@color/priceText"
+                android:paddingLeft="10dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="8dp" />
+
+            <View
+                android:background="@android:color/darker_gray"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                style="@style/TextViewItemDesc"
                 android:id="@+id/tvItemDesc"
                 android:textColor="@color/descText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="P\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP
-                \nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\n"
-                android:textSize="14sp"
+                android:text="Desc"
                 android:paddingLeft="10dp"
-                android:paddingRight="10dp" />
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"/>
 
-        </ScrollView>
 
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</ScrollView>
