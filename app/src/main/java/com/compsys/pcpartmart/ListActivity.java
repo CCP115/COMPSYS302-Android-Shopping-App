@@ -70,7 +70,7 @@ public class ListActivity extends AppCompatActivity {
             String query = intent.getStringExtra(SearchManager.QUERY);
 
             // Set theme and title
-            setTheme(R.style.MainTheme); // TODO: IMPLEMENT searchResults style
+            setTheme(R.style.MainTheme);
             setTitle("Search Results");
             tvSearchQuery.setText("Showing Results for \"" + query + "\"");
 
