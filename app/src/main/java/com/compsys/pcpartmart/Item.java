@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class Item implements Serializable {
 
-    private String id;
+    private int id;
     private String name;
     private String price;
     private String type;
@@ -13,7 +13,7 @@ public class Item implements Serializable {
     private int[] images;
     private String desc;
 
-    public Item(String id, String price, String name, String type, String desc, int[] images) {
+    public Item(int id, String price, String name, String type, String desc, int[] images) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -27,6 +27,10 @@ public class Item implements Serializable {
 
     public String getName() {
         return name;
+    }
+
+    public int getId() {
+        return this.id;
     }
 
     public String getPrice() {

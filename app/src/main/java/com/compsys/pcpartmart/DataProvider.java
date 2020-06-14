@@ -3,6 +3,13 @@ package com.compsys.pcpartmart;
 import java.util.ArrayList;
 
 public class DataProvider {
+
+    static int[] cpuViews = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+
+    static int[] gpuViews = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+
+    static int[] mntrViews = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+
     static String[] cpuNames = {
             // CPU Names
             "Intel Coffee Lake Core i7 9700K",
@@ -82,12 +89,16 @@ public class DataProvider {
             "Philips 499P9H1/75 49\" 5k2k USB-C Ultrawide Curved Monitor , 5120X1440 , HDR400 , Built-in KVM switch , HDMI+DisplayPort + USB-C , POP-UP Webcam with Windows Hello",
     };
 
-    static String[] cpuIds = {"001", "002", "003", "004", "005", "006", "007", "008", "009", "010"};
+    static int[] cpuIds = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-    static String[] gpuIds = {"001", "002", "003", "004", "005", "006", "007", "008", "009", "010"};
+    static int[] gpuIds = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-    static String[] mntrIds = {
-            "001", "002", "003", "004", "005", "006", "007", "008", "009", "010"};
+    static int[] mntrIds = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+//    static String[] gpuIds = {"001", "002", "003", "004", "005", "006", "007", "008", "009", "010"};
+//
+//    static String[] mntrIds = {
+//            "001", "002", "003", "004", "005", "006", "007", "008", "009", "010"};
 
     static String[] cpuPrices = {
             // CPU Prices
@@ -149,7 +160,7 @@ public class DataProvider {
         ArrayList<Item> cpus = new ArrayList<Item>();
 
         for (int i = 0; i < 10; i++) {
-            String id = cpuIds[i];
+            int id = cpuIds[i];
             String price = cpuPrices[i];
             String name = cpuNames[i];
             String desc = cpuDescs[i];
@@ -166,7 +177,7 @@ public class DataProvider {
         ArrayList<Item> gpus = new ArrayList<Item>();
 
         for (int i = 0; i < 10; i++) {
-            String id = gpuIds[i];
+            int id = gpuIds[i];
             String price = gpuPrices[i];
             String name = gpuNames[i];
             String desc = gpuDescs[i];
@@ -183,7 +194,7 @@ public class DataProvider {
         ArrayList<Item> monitors = new ArrayList<Item>();
 
         for (int i = 0; i < 10; i++) {
-            String id = mntrIds[i];
+            int id = mntrIds[i];
             String price = mntrPrices[i];
             String name = mntrNames[i];
             String desc = mntrDescs[i];
@@ -200,7 +211,7 @@ public class DataProvider {
         ArrayList<Item> items = new ArrayList<Item>();
         for (int i = 0; i < 10; i++) {
             if ((cpuNames[i].toLowerCase().contains(keyword.toLowerCase())) || (cpuDescs[i].toLowerCase().contains(keyword.toLowerCase()))) {
-                String id = cpuIds[i];
+                int id = cpuIds[i];
                 String price = cpuPrices[i];
                 String name = cpuNames[i];
                 String desc = cpuDescs[i];
@@ -216,7 +227,7 @@ public class DataProvider {
         ArrayList<Item> items = new ArrayList<Item>();
         for (int i = 0; i < 10; i++) {
             if ((gpuNames[i].contains(keyword)) || (gpuDescs[i].contains(keyword))) {
-                String id = gpuIds[i];
+                int id = gpuIds[i];
                 String price = gpuPrices[i];
                 String name = gpuNames[i];
                 String desc = gpuDescs[i];
@@ -232,7 +243,7 @@ public class DataProvider {
         ArrayList<Item> items = new ArrayList<Item>();
         for (int i = 0; i < 10; i++) {
             if ((mntrNames[i].contains(keyword)) || (mntrDescs[i].contains(keyword))) {
-                String id = mntrIds[i];
+                int id = mntrIds[i];
                 String price = mntrPrices[i];
                 String name = mntrNames[i];
                 String desc = mntrDescs[i];
@@ -262,7 +273,7 @@ public class DataProvider {
     public static ArrayList<Item> generateData() {
         ArrayList<Item> items = new ArrayList<Item>();
         for (int i = 0; i < 3; i++) {
-            String id = cpuIds[i];
+            int id = cpuIds[i];
             String price = cpuPrices[i];
             String name = cpuNames[i];
             String desc = cpuDescs[i];
@@ -274,4 +285,80 @@ public class DataProvider {
         }
         return items;
     }
+
+    public static void incGpuView(int id) {
+        gpuViews[id] += 1;
+    }
+
+    public static void incCpuView(int id) {
+        cpuViews[id] += 1;
+    }
+
+    public static void incMntrView(int id) {
+        mntrViews[id] += 1;
+    }
+
+    public static int getCpuView(int id) {
+        return cpuViews[id];
+    }
+
+    public static int getGpuView(int id) {
+        return gpuViews[id];
+    }
+
+    public static int getMntrView(int id) {
+        return mntrViews[id];
+    }
+
+    public static Item getTopCpu() {
+        int largestPos = 0;
+        for (int i = 0; i < cpuViews.length; i++) {
+            if (cpuViews[i] > largestPos) {
+                largestPos = i;
+            }
+        }
+
+        int id = cpuIds[largestPos];
+        String price = cpuPrices[largestPos];
+        String name = cpuNames[largestPos];
+        String desc = cpuDescs[largestPos];
+        int[] imageAddr = cpuImageAddrs[largestPos];
+
+        return new Item(id, price, name, "CPU", desc, imageAddr);
+    }
+
+    public static Item getTopGpu() {
+        int largestPos = 0;
+        for (int i = 0; i < gpuViews.length; i++) {
+            if (gpuViews[i] > largestPos) {
+                largestPos = i;
+            }
+        }
+
+        int id = gpuIds[largestPos];
+        String price = gpuPrices[largestPos];
+        String name = gpuNames[largestPos];
+        String desc = gpuDescs[largestPos];
+        int[] imageAddr = gpuImageAddrs[largestPos];
+
+        return new Item(id, price, name, "GPU", desc, imageAddr);
+    }
+
+    public static Item getTopMntr() {
+        int largestPos = 0;
+        for (int i = 0; i < mntrViews.length; i++) {
+            if (mntrViews[i] > largestPos) {
+                largestPos = i;
+            }
+        }
+
+        int id = mntrIds[largestPos];
+        String price = mntrPrices[largestPos];
+        String name = mntrNames[largestPos];
+        String desc = mntrDescs[largestPos];
+        int[] imageAddr = mntrImageAddrs[largestPos];
+
+        return new Item(id, price, name, "MONITOR", desc, imageAddr);
+    }
+
 }

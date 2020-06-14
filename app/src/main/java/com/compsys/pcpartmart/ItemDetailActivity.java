@@ -56,5 +56,14 @@ public class ItemDetailActivity extends AppCompatActivity {
         tvItemName.setText(item.getName());
         tvItemPrice.setText(item.getPrice());
         tvItemDesc.setText(item.getDesc());
+
+        // Increment the appropriate viewcount
+        if (item.getType() == "GPU") {
+            DataProvider.incGpuView(item.getId());
+        } else if (item.getType() == "CPU") {
+            DataProvider.incCpuView(item.getId());
+        } else {
+            DataProvider.incMntrView(item.getId());
+        }
     }
 }
