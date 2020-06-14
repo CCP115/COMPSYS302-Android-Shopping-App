@@ -63,7 +63,7 @@
                     <ImageView
                         android:id="@+id/gpu_image"
                         android:layout_width="150dp"
-                        android:layout_height="150dp"
+                        android:layout_height="match_parent"
                         android:padding="5dp"
                         android:src="@drawable/gpu_icon" />
 
@@ -107,7 +107,7 @@
                     <ImageView
                         android:id="@+id/cpu_image"
                         android:layout_width="150dp"
-                        android:layout_height="150dp"
+                        android:layout_height="match_parent"
                         android:padding="5dp"
                         android:src="@drawable/cpu_icon" />
 
@@ -151,7 +151,7 @@
                     <ImageView
                         android:id="@+id/mntr_image"
                         android:layout_width="150dp"
-                        android:layout_height="150dp"
+                        android:layout_height="match_parent"
                         android:padding="5dp"
                         android:src="@drawable/monitor_icon" />
 
