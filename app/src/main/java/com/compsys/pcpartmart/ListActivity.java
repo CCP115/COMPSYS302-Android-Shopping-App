@@ -126,7 +126,9 @@ public class ListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getBaseContext(), ItemDetailActivity.class);
-                intent.putExtra("item", itemAdapter.getItem(position));
+                Item selectedItem = itemAdapter.getItem(position);
+                selectedItem.incrementView();
+                intent.putExtra("item", selectedItem);
                 startActivity(intent);
             }
         });

@@ -2,6 +2,8 @@ package com.compsys.pcpartmart;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.SearchManager;
 import android.content.ComponentName;
@@ -16,9 +18,27 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    // Recycler View object
+    RecyclerView recyclerView;
+
+    // Array list for recycler view data source
+    ArrayList<String> source;
+
+    // Layout Manager
+    RecyclerView.LayoutManager RecyclerViewLayoutManager;
+
+    // adapter class object
+    RecyclerViewAdapter adapter;
+
+    // Linear Layout Manager
+    LinearLayoutManager HorizontalLayout;
+
+    View ChildView;
+    int RecyclerViewItemPosition;
 
     View.OnClickListener gpuButtonHandler = new View.OnClickListener() {
         public void onClick(View view) {
@@ -66,6 +86,28 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // initialisation with id's
+        recyclerView = (RecyclerView) findViewById(R.id.top_picks_view);
+        RecyclerViewLayoutManager = new LinearLayoutManager(getApplicationContext());
+
+        // Set LayoutManager on Recycler View
+        recyclerView.setLayoutManager(RecyclerViewLayoutManager);
+
+        // Adding items to RecyclerView.
+        AddItemsToRecyclerViewArrayList();
+
+        // calling constructor of adapter
+        // with source list as a parameter
+        adapter = new RecyclerViewAdapter(source);
+
+        // Set Horizontal Layout Manager
+        // for Recycler view
+        HorizontalLayout = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false);
+        recyclerView.setLayoutManager(HorizontalLayout);
+
+        // Set adapter on recycler view
+        recyclerView.setAdapter(adapter);
+
         // Set up handler for GPU button press
         Button gpuButton = (Button) findViewById(R.id.gpu_button);
         gpuButton.setOnClickListener(gpuButtonHandler);
@@ -77,5 +119,14 @@ public class MainActivity extends AppCompatActivity {
         // Set up handler for monitor button press
         Button mntrButton = (Button) findViewById(R.id.mntr_button);
         mntrButton.setOnClickListener(mntrButtonHandler);
+    }
+
+    // Function to add items in RecyclerView.
+    public void AddItemsToRecyclerViewArrayList() {
+        // Adding items to ArrayList
+        source = new ArrayList<>();
+        source.add("1");
+        source.add("2");
+        source.add("3");
     }
 }
