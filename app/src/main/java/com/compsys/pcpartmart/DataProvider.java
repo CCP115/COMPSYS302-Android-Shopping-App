@@ -258,4 +258,20 @@ public class DataProvider {
 
         return items;
     }
+
+    public static ArrayList<Item> generateData() {
+        ArrayList<Item> items = new ArrayList<Item>();
+        for (int i = 0; i < 3; i++) {
+            String id = cpuIds[i];
+            String price = cpuPrices[i];
+            String name = cpuNames[i];
+            String desc = cpuDescs[i];
+
+            int[] imageAddr = cpuImageAddrs[i];
+
+            Item tempItem = new Item(id, price, name, "CPU", desc, imageAddr);
+            items.add(tempItem);
+        }
+        return items;
+    }
 }
