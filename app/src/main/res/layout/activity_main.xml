@@ -11,7 +11,8 @@
         android:id="@+id/top_picks_view"
         android:scrollbars="horizontal"
         android:background="@android:color/transparent"
-        android:layout_width="match_parent"
+        android:layout_width="330dp"
+        android:layout_centerHorizontal="true"
         android:layout_height="150dp"
         android:layout_marginTop="20dp"/>
 
