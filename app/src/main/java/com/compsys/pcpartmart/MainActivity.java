@@ -74,6 +74,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+
+        // Refresh the top picks
+        contacts.clear();
+        contacts.add(DataProvider.getTopGpu());
+        contacts.add(DataProvider.getTopCpu());
+        contacts.add(DataProvider.getTopMntr());
+
+        adapter.notifyDataSetChanged();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -82,7 +95,10 @@ public class MainActivity extends AppCompatActivity {
         rvContacts = (RecyclerView) findViewById(R.id.top_picks_view);
 
         // Initialize contacts
-        contacts = DataProvider.generateData();
+        contacts = new ArrayList<Item>();
+        contacts.add(DataProvider.getTopCpu());
+        contacts.add(DataProvider.getTopGpu());
+        contacts.add(DataProvider.getTopMntr());
         // Create adapter passing in the sample user data
         adapter = new RecyclerViewAdaptor(contacts);
         // Attach the adapter to the recyclerview to populate items

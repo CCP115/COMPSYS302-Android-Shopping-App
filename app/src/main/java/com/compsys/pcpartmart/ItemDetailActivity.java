@@ -58,9 +58,9 @@ public class ItemDetailActivity extends AppCompatActivity {
         tvItemDesc.setText(item.getDesc());
 
         // Increment the appropriate viewcount
-        if (item.getType() == "GPU") {
+        if (item.getType().equals("GPU")) {
             DataProvider.incGpuView(item.getId());
-        } else if (item.getType() == "CPU") {
+        } else if (item.getType().equals("CPU")) {
             DataProvider.incCpuView(item.getId());
         } else {
             DataProvider.incMntrView(item.getId());
