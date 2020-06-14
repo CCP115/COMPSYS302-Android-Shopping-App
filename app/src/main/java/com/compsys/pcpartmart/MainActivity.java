@@ -15,6 +15,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -104,41 +105,5 @@ public class MainActivity extends AppCompatActivity {
         Button mntrButton = (Button) findViewById(R.id.mntr_button);
         mntrButton.setOnClickListener(mntrButtonHandler);
     }
-
-//    public void addNewContact(View v) {
-//
-//        EditText newNameEditText = findViewById(R.id.edit_text_name);
-//
-//        //First check if contact name is not empty
-//        if (String.valueOf(newNameEditText.getText()).isEmpty()) {
-//            Toast.makeText(this, "Please enter the contact name", Toast.LENGTH_SHORT).show();
-//            return;
-//        }
-//
-//        Spinner spinnerOnlineStatrus = findViewById(R.id.spinner_online_status);
-//        String onlineStatus = (String) spinnerOnlineStatrus.getSelectedItem();
-//
-//        Contact newContact;
-//        if (onlineStatus.equals("Online"))
-//            newContact = new Contact(newNameEditText.getText().toString(), true);
-//        else
-//            newContact = new Contact(newNameEditText.getText().toString(), false);
-//
-//        contacts.add(0, newContact);
-//
-//        // Notify the adaptor that a new contact is added to the top of the list
-//        adapter.notifyItemInserted(0);
-//
-//        // Scroll to the top of the recyclerview
-//        rvContacts.scrollToPosition(0);
-//
-//        //Empty the editText
-//        newNameEditText.setText("");
-//        Toast.makeText(this, "New contact is added", Toast.LENGTH_SHORT).show();
-//        // Hide the keyboard
-//        InputMethodManager imm = (InputMethodManager) this.getSystemService(Context.INPUT_METHOD_SERVICE);
-//        imm.hideSoftInputFromWindow(newNameEditText.getWindowToken(), 0);
-//
-//    }
 
 }

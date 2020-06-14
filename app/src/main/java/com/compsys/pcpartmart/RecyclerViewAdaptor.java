@@ -1,12 +1,12 @@
 package com.compsys.pcpartmart;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -32,9 +32,10 @@ public class RecyclerViewAdaptor extends RecyclerView.Adapter<RecyclerViewAdapto
 
         @Override
         public void onClick(View v) {
-            // What to do when the view item is clicked
-            Item clickedContact = mContacts.get(getAdapterPosition());
-            Toast.makeText(mContext, clickedContact.getName() + " is clicked in position " + getAdapterPosition(), Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(mContext, ItemDetailActivity.class);
+            Item selectedItem = mContacts.get(getAdapterPosition());
+            intent.putExtra("item", selectedItem);
+            mContext.startActivity(intent);
         }
     }
 
