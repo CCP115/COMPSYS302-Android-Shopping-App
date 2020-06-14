@@ -1,7 +1,6 @@
 package com.compsys.pcpartmart;
 
 import java.io.Serializable;
-import java.util.Random;
 
 public class Item implements Serializable {
 
@@ -9,7 +8,6 @@ public class Item implements Serializable {
     private String name;
     private String price;
     private String type;
-    private int views;
     private int[] images;
     private String desc;
 
@@ -20,9 +18,6 @@ public class Item implements Serializable {
         this.type = type;
         this.images = images;
         this.desc = desc;
-
-        Random rand = new Random();
-        this.views = rand.nextInt(50);
     }
 
     public String getName() {
@@ -47,14 +42,6 @@ public class Item implements Serializable {
 
     public String getType() {
         return type;
-    }
-
-    public int getViews() {
-        return views;
-    }
-
-    public void incrementView() {
-        views++;
     }
 
     public int[] getImages() {

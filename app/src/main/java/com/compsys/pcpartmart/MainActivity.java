@@ -12,25 +12,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
-import android.widget.AutoCompleteTextView;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<Item> contacts;
+    ArrayList<Item> items;
     RecyclerViewAdaptor adapter;
-    RecyclerView rvContacts;
+    RecyclerView rvItems;
 
     View.OnClickListener gpuButtonHandler = new View.OnClickListener() {
         public void onClick(View view) {
@@ -78,10 +69,10 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
 
         // Refresh the top picks
-        contacts.clear();
-        contacts.add(DataProvider.getTopGpu());
-        contacts.add(DataProvider.getTopCpu());
-        contacts.add(DataProvider.getTopMntr());
+        items.clear();
+        items.add(DataProvider.getTopGpu());
+        items.add(DataProvider.getTopCpu());
+        items.add(DataProvider.getTopMntr());
 
         adapter.notifyDataSetChanged();
     }
@@ -92,23 +83,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Lookup the recyclerview in activity layout
-        rvContacts = (RecyclerView) findViewById(R.id.top_picks_view);
+        rvItems = (RecyclerView) findViewById(R.id.top_picks_view);
 
-        // Initialize contacts
-        contacts = new ArrayList<Item>();
-        contacts.add(DataProvider.getTopCpu());
-        contacts.add(DataProvider.getTopGpu());
-        contacts.add(DataProvider.getTopMntr());
+        // Initialize items
+        items = new ArrayList<Item>();
+        items.add(DataProvider.getTopCpu());
+        items.add(DataProvider.getTopGpu());
+        items.add(DataProvider.getTopMntr());
         // Create adapter passing in the sample user data
-        adapter = new RecyclerViewAdaptor(contacts);
+        adapter = new RecyclerViewAdaptor(items);
         // Attach the adapter to the recyclerview to populate items
-        rvContacts.setAdapter(adapter);
+        rvItems.setAdapter(adapter);
 
         // Fore a Horizontal RecyclerView use
          LinearLayoutManager lm = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
 
         // Set layout manager to position the items
-        rvContacts.setLayoutManager(lm);
+        rvItems.setLayoutManager(lm);
 
         // Set up handler for GPU button press
         CardView gpuButton = (CardView) findViewById(R.id.gpu_button);

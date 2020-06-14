@@ -18,7 +18,7 @@ public class RecyclerViewAdaptor extends RecyclerView.Adapter<RecyclerViewAdapto
     // To make your view item clickable ensure that the view holder class implements View.OnClickListener and it has the onClick(View v) method.
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        // Declare objects of all the views to be manipulated in item_contact.xml
+        // Declare objects of all the views to be manipulated in top_pick_item.xml
         public TextView topPickTextView;
         public ImageView topPickImageView;
 
@@ -33,20 +33,20 @@ public class RecyclerViewAdaptor extends RecyclerView.Adapter<RecyclerViewAdapto
         @Override
         public void onClick(View v) {
             Intent intent = new Intent(mContext, ItemDetailActivity.class);
-            Item selectedItem = mContacts.get(getAdapterPosition());
+            Item selectedItem = mItems.get(getAdapterPosition());
             intent.putExtra("item", selectedItem);
             mContext.startActivity(intent);
         }
     }
 
     // Declare the data collection object that holds the data to be populated in the RecyclerView
-    private List<Item> mContacts;
+    private List<Item> mItems;
     private Context mContext;
 
-    // Pass in the contact array object into the constructor
-    public RecyclerViewAdaptor(List<Item> contacts) {
-        // The contacts object is sent via the activity that creates this adaptor
-        mContacts = contacts;
+    // Pass in the item array object into the constructor
+    public RecyclerViewAdaptor(List<Item> items) {
+        // The items object is sent via the activity that creates this adaptor
+        mItems = items;
     }
 
     // Usually involves inflating a layout from XML and returning the holder
@@ -57,10 +57,10 @@ public class RecyclerViewAdaptor extends RecyclerView.Adapter<RecyclerViewAdapto
         LayoutInflater inflater = LayoutInflater.from(mContext);
 
         // Inflate the custom layout
-        View contactView = inflater.inflate(R.layout.top_pick_item, parent, false);
+        View itemView = inflater.inflate(R.layout.top_pick_item, parent, false);
 
         // Return a new holder instance
-        ViewHolder holder = new ViewHolder(contactView);
+        ViewHolder holder = new ViewHolder(itemView);
         return holder;
     }
 
@@ -68,7 +68,7 @@ public class RecyclerViewAdaptor extends RecyclerView.Adapter<RecyclerViewAdapto
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdaptor.ViewHolder holder, int position) {
         // Get the data object for the item view in this position
-        Item thisContact = mContacts.get(position);
+        Item thisContact = mItems.get(position);
 
         holder.topPickTextView.setText(thisContact.getName());
         int resID = thisContact.getImage(0);
@@ -77,7 +77,7 @@ public class RecyclerViewAdaptor extends RecyclerView.Adapter<RecyclerViewAdapto
 
     @Override
     public int getItemCount() {
-        return mContacts.size();
+        return mItems.size();
     }
 
 
