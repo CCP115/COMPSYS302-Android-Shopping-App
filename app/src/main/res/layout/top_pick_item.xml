@@ -14,7 +14,6 @@
             android:id="@+id/top_pick_image_view"
             android:layout_width="100dp"
             android:layout_height="80dp"
-            android:layout_margin="2dp"
             android:layout_centerHorizontal="true"/>
 
         <TextView
