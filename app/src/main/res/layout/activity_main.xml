@@ -24,100 +24,140 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/top_picks_view">
+
     <!-- GPUs -->
-    <Button
+    <androidx.cardview.widget.CardView
         android:id="@+id/gpu_button"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@android:color/transparent"
-        android:layout_below="@id/top_picks_view"
-        android:layout_marginTop="25dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="10dp"
+        android:padding="20dp"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/gpuLight">
 
-    <ImageView
-        android:id="@+id/gpu_image"
-        android:layout_width="120dp"
-        android:layout_height="100dp"
-        android:layout_alignBottom="@+id/gpu_button"
-        android:layout_margin="2dp"
-        android:src="@drawable/gpu_icon"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
 
-    <TextView
-        style="@style/TextViewItemName"
-        android:id ="@+id/gpu_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:layout_marginLeft="170dp"
-        android:textSize="18sp"
-        android:layout_alignBottom="@+id/gpu_button"
-        android:text="GPUs"
-        android:textColor="@color/mainText"
-        android:maxLines="2"
-        android:ellipsize="end"/>
+            <ImageView
+                android:id="@+id/gpu_image"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:src="@drawable/gpu_icon" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@id/gpu_image">
+
+                <TextView
+                    android:id="@+id/gpu_text"
+                    style="@style/TextViewItemName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="GPUs"
+                    android:textColor="@color/mainText"
+                    android:textSize="18sp"
+                    android:layout_centerInParent="true"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 
     <!-- CPUs -->
-    <Button
+    <androidx.cardview.widget.CardView
         android:id="@+id/cpu_button"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@android:color/transparent"
-        android:layout_below="@id/gpu_button"
-        android:layout_marginTop="25dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="10dp"
+        android:padding="20dp"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/cpuLight">
 
-    <ImageView
-        android:id="@+id/cpu_image"
-        android:layout_width="120dp"
-        android:layout_height="100dp"
-        android:layout_alignBottom="@+id/cpu_button"
-        android:layout_margin="2dp"
-        android:src="@drawable/cpu_icon"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
 
-    <TextView
-        style="@style/TextViewItemName"
-        android:id ="@+id/cpu_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:layout_marginLeft="170dp"
-        android:textSize="18sp"
-        android:layout_alignBottom="@+id/cpu_button"
-        android:text="CPUs"
-        android:textColor="@color/mainText"
-        android:maxLines="2"
-        android:ellipsize="end"/>
+            <ImageView
+                android:id="@+id/cpu_image"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:src="@drawable/cpu_icon" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@id/cpu_image">
+
+                <TextView
+                    android:id="@+id/cpu_text"
+                    style="@style/TextViewItemName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CPUs"
+                    android:textColor="@color/mainText"
+                    android:textSize="18sp"
+                    android:layout_centerInParent="true"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 
     <!-- Monitors -->
-    <Button
+    <androidx.cardview.widget.CardView
         android:id="@+id/mntr_button"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@android:color/transparent"
-        android:layout_below="@id/cpu_button"
-        android:layout_marginTop="25dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="10dp"
+        android:padding="20dp"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/mntrLight">
 
-    <ImageView
-        android:id="@+id/mntr_image"
-        android:layout_width="120dp"
-        android:layout_height="100dp"
-        android:layout_alignBottom="@+id/mntr_button"
-        android:layout_margin="2dp"
-        android:src="@drawable/monitor_icon"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
 
-    <TextView
-        style="@style/TextViewItemName"
-        android:id ="@+id/mntr_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:layout_marginLeft="170dp"
-        android:textSize="18sp"
-        android:layout_alignBottom="@+id/mntr_button"
-        android:text="Monitors"
-        android:textColor="@color/mainText"
-        android:maxLines="2"
-        android:ellipsize="end"/>
+            <ImageView
+                android:id="@+id/mntr_image"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:src="@drawable/monitor_icon" />
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@id/mntr_image">
+
+                <TextView
+                    android:id="@+id/mntr_text"
+                    style="@style/TextViewItemName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Monitors"
+                    android:textColor="@color/mainText"
+                    android:textSize="18sp"
+                    android:layout_centerInParent="true"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
 </RelativeLayout>

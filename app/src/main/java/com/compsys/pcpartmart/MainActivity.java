@@ -2,6 +2,7 @@ package com.compsys.pcpartmart;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -93,15 +94,15 @@ public class MainActivity extends AppCompatActivity {
         rvContacts.setLayoutManager(lm);
 
         // Set up handler for GPU button press
-        Button gpuButton = (Button) findViewById(R.id.gpu_button);
+        CardView gpuButton = (CardView) findViewById(R.id.gpu_button);
         gpuButton.setOnClickListener(gpuButtonHandler);
 
         // Set up handler for CPU button press
-        Button cpuButton = (Button) findViewById(R.id.cpu_button);
+        CardView cpuButton = (CardView) findViewById(R.id.cpu_button);
         cpuButton.setOnClickListener(cpuButtonHandler);
 
         // Set up handler for monitor button press
-        Button mntrButton = (Button) findViewById(R.id.mntr_button);
+        CardView mntrButton = (CardView) findViewById(R.id.mntr_button);
         mntrButton.setOnClickListener(mntrButtonHandler);
     }
 
