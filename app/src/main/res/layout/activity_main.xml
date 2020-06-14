@@ -13,7 +13,6 @@
         android:background="@android:color/transparent"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:layout_below="@id/top_picks_text"
         android:layout_marginTop="20dp"/>
 
     <TextView
@@ -64,7 +63,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="GPUs"
-                    android:textColor="@color/mainText"
+                    android:textStyle="bold"
+                    android:textColor="#111111"
                     android:textSize="18sp"
                     android:layout_centerInParent="true"/>
 
@@ -107,7 +107,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="CPUs"
-                    android:textColor="@color/mainText"
+                    android:textStyle="bold"
+                    android:textColor="#111111"
                     android:textSize="18sp"
                     android:layout_centerInParent="true"/>
 
@@ -150,7 +151,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Monitors"
-                    android:textColor="@color/mainText"
+                    android:textColor="#111111"
+                    android:textStyle="bold"
                     android:textSize="18sp"
                     android:layout_centerInParent="true"/>
 
