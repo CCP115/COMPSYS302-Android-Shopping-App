@@ -13,22 +13,34 @@
         android:background="@android:color/transparent"
         android:layout_width="330dp"
         android:layout_centerHorizontal="true"
-        android:layout_height="150dp"
-        android:layout_marginTop="20dp"/>
+        android:layout_below="@id/top_picks_text"
+        android:layout_height="150dp"/>
 
     <TextView
         android:id="@+id/top_picks_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:text="TOP PICKS"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/categories_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="CATEGORIES"
+        android:layout_below="@id/top_picks_view"
         android:layout_centerHorizontal="true"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_below="@id/top_picks_view">
+        android:layout_below="@id/categories_text">
 
     <!-- GPUs -->
     <androidx.cardview.widget.CardView
