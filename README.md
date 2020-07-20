@@ -1,7 +1,7 @@
 # PC Part Mart
 Created by Lenny Schwarz & Cecil Symes
 
-![Video Thumbnail](https://github.com/CCP115/COMPSYS302-Android-Shopping-App/edit/master/Title_Card.png "Video Thumbnail")
+![Video Thumbnail](Title_Card.png "Video Thumbnail")
 
 [Click here to watch our explanation video!](https://youtu.be/gX6i9sc4xtY)
 
