@@ -1,5 +1,7 @@
 # PC Part Mart
-Created by Lenny Schwarz & Cecil Symes
+###### Created by Lenny Schwarz & Cecil Symes
+
+## Video Explanation
 
 ![Video Thumbnail](Title_Card.png "Video Thumbnail")
 
