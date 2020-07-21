@@ -1,11 +1,13 @@
 # PC Part Mart
 ###### Created by Lenny Schwarz & Cecil Symes
+###### COMPSYS302 Project 2
 
 ## Video Explanation
 
-![Video Thumbnail](Title_Card.png "Video Thumbnail")
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=gX6i9sc4xtY" target="_blank"><img src="http://img.youtube.com/vi/gX6i9sc4xtY/0.jpg" 
+alt="Video Thumbnail" width="320" height="240" border="10" /></a>
 
-[Click here to watch our explanation video!](https://youtu.be/gX6i9sc4xtY)
+Click the thumbnail to watch our explanation video!
 
 ## Project Brief
 
